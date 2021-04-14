@@ -4,10 +4,11 @@
 3. 開始版本控制
 4. `git checkout -b week1`，開一個新分支，並來到新分支
 5. 寫作業
-6. `git commit -am '名稱'`，加入並 commit 自己修改後的作業
-7. `git push origin week1`，將作業 push 到 github
-8. 發 pull request
-9. 上學習系統發 PR
+6. `git add .`，加入以修改過後的作業
+7. `git commit -am '名稱'`，commit 自己修改後的作業
+8. `git push origin week1`，將作業 push 到 github
+9. 發 pull request
+10. 上學習系統發 PR
 
 ## 作業改完後
 
