@@ -7,10 +7,16 @@
 
 ### 那要怎麼使用它呢 ? 
 首先要先在自己的電腦建置環境
-- Windows 上面執行 command line 指令，先安裝 git-bash
+- Windows 上面執行 command line 指令，先安裝 [git-bash](https://lidemy.com/courses/379441/lectures/5795084)
+  - 另一個可以考慮安裝 [Windows Terminal](https://www.microsoft.com/zh-tw/p/windows-terminal/9n0dx20hk701#activetab=pivot:overviewtab) 
+    - [自訂主題簡單教學](https://oxygentw.net/blog/computer/set-windows-terminal-themes/)
+    - [建立 git-bash](https://blog.walterlv.com/post/add-a-new-profile-for-windows-terminal.html)
+>因為看 mac 都能用美美的介面，不甘心 windows 的那麼醜，然後就真的找到了比 git-bash 美的，但好不好用 ? 不知道，我只知道美是有代價的，好麻煩，一個下午就這樣過去了...
+
+
 - mac 上面執行command line 指令，先安裝 iTerm2
-    - [iTerm2 + zsh](http://huli.logdown.com/posts/402147-iterm2-zsh-better-environment)
-    - [打造漂亮又好用的 zsh command line](https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f)
+  - [iTerm2 + zsh](http://huli.logdown.com/posts/402147-iterm2-zsh-better-environment)
+  - [打造漂亮又好用的 zsh command line](https://medium.com/statementdog-engineering/prettify-your-zsh-command-line-prompt-3ca2acc967f)
 
 ### 如何建立資料夾、檔案 ?
 關於建立資料夾和建立檔案，會用到的指令是 :
