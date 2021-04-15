@@ -14,4 +14,4 @@
 
 1.  `git checkout master`，先在本地端切回主分支
 2.  `git pull origin master`，從 github 下載檔案，同步本地端
-3.  `git branch -d wee1`，刪除本地端分支
+3.  `git branch -d week1`，刪除本地端分支
