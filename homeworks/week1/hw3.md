@@ -11,7 +11,6 @@
   - 另一個可以考慮安裝 [Windows Terminal](https://www.microsoft.com/zh-tw/p/windows-terminal/9n0dx20hk701#activetab=pivot:overviewtab) 
     - [自訂主題簡單教學](https://oxygentw.net/blog/computer/set-windows-terminal-themes/)
     - [建立 git-bash](https://blog.walterlv.com/post/add-a-new-profile-for-windows-terminal.html)
->因為看 mac 都能用美美的介面，不甘心 windows 的那麼醜，然後就真的找到了比 git-bash 美的，但好不好用 ? 不知道，我只知道美是有代價的，好麻煩，一個下午就這樣過去了...
 
 
 - mac 上面執行command line 指令，先安裝 iTerm2
