@@ -1,12 +1,12 @@
 function capitalize(str) {
-	let resolve = ''
+	let result = ''
 	let firstWord = str[0]
-	resolve = firstWord.toUpperCase()
+	result = firstWord.toUpperCase()
 
   for(let i=1; i<str.length; i++){
-  	resolve += str[i]
+  	result += str[i]
   }
-  return resolve
+  return result
 }
 
 console.log(capitalize('hello'));

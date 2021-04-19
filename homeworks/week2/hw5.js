@@ -1,17 +1,17 @@
 function join(arr, concatStr) {
-	let resolve = ''
+	let result = ''
 	for(let i=0; i<arr.length-1; i++) {
-		resolve += arr[i] + concatStr
+		result += arr[i] + concatStr
 	}
-	return resolve + arr[arr.length-1]
+	return result + arr[arr.length-1]
 }
 
 function repeat(str, times) {
-  	let resolve = ''
+  	let result = ''
   	for(let i=1; i<=times; i++) {
-  		resolve += str
+  		result += str
   }
-  return resolve
+  return result
 }
 
 console.log(join(['a'], '!'));

@@ -1,9 +1,9 @@
 function reverse(str) {
-	let resolve = ''
+	let result = ''
 	for(let i=str.length-1; i>=0; i--) {
-		resolve += str[i]
+		result += str[i]
 	}
-	console.log(resolve)
+	console.log(result)
 }
 
 reverse('hello');
