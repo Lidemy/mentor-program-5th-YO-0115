@@ -20,7 +20,7 @@ function solve(lines) {
   for (let i = n; i <= m; i++) {
     if (i < 10) {
       console.log(i)
-    } else if (i === Narcissistic(i)) {
+    } else if (i === narcissistic(i)) {
       console.log(i)
     }
   }
@@ -35,7 +35,7 @@ function digitsCount(n) {
   return result
 }
 
-function Narcissistic(n) {
+function narcissistic(n) {
   const digits = digitsCount(n)
   let sum = 0
   while (n !== 0) {
