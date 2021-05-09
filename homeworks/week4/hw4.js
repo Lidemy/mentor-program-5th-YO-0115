@@ -1,20 +1,27 @@
 const request = require('request')
 
-request(
-  {
-    url: 'https://api.twitch.tv/kraken/games/top',
-    headers: {
-      Accept: 'application/vnd.twitchtv.v5+json',
-      'Client-ID': 'ngq7mwdydvhjs7cfng2c8j80tmm7rk'
-    }
-  },
-  (error, response, body) => {
-    if (response.statusCode < 200 || response.statusCode >= 300) return console.log('stausCode', response.statusCode)
-    if (error) return console.log('操作失敗', error)
-    const obj = JSON.parse(body)
+const BASE_URL = 'https://api.twitch.tv/kraken'
 
-    for (let i = 0; i < obj.top.length; i++) {
-      console.log(obj.top[i].viewers, obj.top[i].game.name)
-    }
+request({
+  method: 'GET',
+  url: `${BASE_URL}/games/top`,
+  headers: {
+    Accept: 'application/vnd.twitchtv.v5+json',
+    'Client-ID': 'ngq7mwdydvhjs7cfng2c8j80tmm7rk'
   }
-)
+}, (error, response, body) => {
+  if (error) return console.log('操作失敗', error)
+
+  let data
+  try {
+    data = JSON.parse(body)
+  } catch (error) {
+    console.log(error)
+    return
+  }
+
+  const games = data.top
+  for (let i = 0; i < games.length; i++) {
+    console.log(games[i].viewers, games[i].game.name)
+  }
+})

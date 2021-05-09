@@ -3,79 +3,103 @@ const request = require('request')
 // node.js 內建模組
 const process = require('process')
 
-const arg = process.argv[2]
-const str1 = process.argv[3]
-const str2 = process.argv[4]
+const action = process.argv[2]
+const params = process.argv[3]
+const params2 = process.argv[4]
 
-if (arg === 'list') {
+const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com'
+
+switch (action) {
+  case 'list':
+    listBooks()
+    break
+  case 'read':
+    readBook(params)
+    break
+  case 'delete':
+    deleteBook(params)
+    break
+  case 'create':
+    createBook(params)
+    break
+  case 'update':
+    updateBook(params, params2)
+    break
+  default:
+    console.log('Available commands: list, read, delete, create and update')
+}
+
+function listBooks() {
   request(
-    'https://lidemy-book-store.herokuapp.com/books?_limit=20',
+    `${API_ENDPOINT}/books?_limit=20`,
     (error, response, body) => {
-      if (response.statusCode < 200 || response.statusCode >= 300) return console.log('stausCode', response.statusCode)
       if (error) return console.log('操作失敗', error)
-      const obj = JSON.parse(body)
 
-      for (let i = 0; i < obj.length; i++) {
-        console.log(obj[i].id, obj[i].name)
+      let data
+      try {
+        data = JSON.parse(body)
+      } catch (error) {
+        console.log(error)
+        return
+      }
+
+      for (let i = 0; i < data.length; i++) {
+        console.log(data[i].id, data[i].name)
       }
     }
   )
 }
 
-if (arg === 'read') {
+function readBook(id) {
   request(
-    'https://lidemy-book-store.herokuapp.com/books',
+    `${API_ENDPOINT}/books/${id}`,
     (error, response, body) => {
-      if (response.statusCode < 200 || response.statusCode >= 300) return console.log('stausCode', response.statusCode)
       if (error) return console.log('操作失敗', error)
-      const obj = JSON.parse(body)
 
-      for (let i = 0; i < obj.length; i++) {
-        if (obj[i].id === str1) return console.log(obj[i].name)
+      let data
+      try {
+        data = JSON.parse(body)
+      } catch (error) {
+        console.log(error)
+        return
       }
+      console.log(data)
     }
   )
 }
 
-if (arg === 'delete') {
+function deleteBook(id) {
   request.delete(
-    `https://lidemy-book-store.herokuapp.com/books/${str1}`,
+    `${API_ENDPOINT}/books/${id}`,
     (error, response, body) => {
-      if (response.statusCode < 200 || response.statusCode >= 300) return console.log('stausCode', response.statusCode)
       if (error) return console.log('操作失敗', error)
-      console.log(body)
+      console.log('刪除成功')
     }
   )
 }
 
-if (arg === 'create') {
-  request.post(
-    'https://lidemy-book-store.herokuapp.com/books',
-    {
-      form: {
-        name: `${str1}`
-      }
-    },
-    (error, response, body) => {
-      if (response.statusCode < 200 || response.statusCode >= 300) return console.log('stausCode', response.statusCode)
-      if (error) return console.log('操作失敗', error)
-      console.log(body)
+function createBook(name) {
+  request.post({
+    url: `${API_ENDPOINT}/books`,
+    form: {
+      name
     }
-  )
+  },
+  (error, response, body) => {
+    if (error) return console.log('操作失敗', error)
+    console.log('新增成功')
+  })
 }
 
-if (arg === 'update') {
-  request.patch(
-    `https://lidemy-book-store.herokuapp.com/books/${str1}`,
-    {
-      form: {
-        name: `${str2}`
-      }
-    },
-    (error, response, body) => {
-      if (response.statusCode < 200 || response.statusCode >= 300) return console.log('stausCode', response.statusCode)
-      if (error) return console.log('操作失敗', error)
-      console.log(body)
+function updateBook(id, name) {
+  request.patch({
+    url: `${API_ENDPOINT}/books/${id}`,
+    form: {
+      name
     }
-  )
+  },
+  (error, response, body) => {
+    if (error) return console.log('操作失敗', error)
+    console.log('更新成功')
+  })
 }
