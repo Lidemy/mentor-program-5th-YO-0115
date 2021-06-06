@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/fontello.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="list-card">
+        <div class="list-card__Thumbtack top"></div>
+        <div class="list-card__title">
+          TO DO LIST
+        </div>
+        <div class="lsit-card__container">
+          <input class="list__input" type="text" placeholder="今天想做點什麼... ?">
+          <ul class="list">
+            <li class="list__item">
+              <button class="btn item__checkbox">
+                <div class="icon-check"></div>
+              </button>
+              <p class="item__content">hello world</p>
+              <button class="item__delete">del</button>
+            </li>
+            <li class="list__item finished">
+              <button class="btn">
+                <div class="icon-check"></div>
+              </button>
+              <p class="item__content">你好啊世界</p>
+              <button class="item__delete">del</button>
+            </li>
+          </ul>
+        </div>
+        <div class="list-card__Thumbtack bottom"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="index.js"></script>
+</body>
+</html>

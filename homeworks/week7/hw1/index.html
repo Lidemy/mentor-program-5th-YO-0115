@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新拖延運動報名表單</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <main class="main">
+      <div class="container">
+        <form> 
+          <h1 class="title">新拖延運動報名表單</h1>
+          <div class="title__desc">
+            <div class="title__date">
+              <div class="title__text">活動日期：</div>
+              <div class="title-content__text">2020/12/10 ~ 2020/12/11</div>
+            </div>
+            <div class="title__add">
+              <div class="title__text">活動地點：</div>
+              <div class="title-content__text">台北市大安區新生南路二段1號</div>
+            </div>
+          </div>
+          <div class="title__must">* 必填</div>
+          <div class="form hide-error">
+            <label for="name">
+              暱稱 <span style="color:#e74149;">*</span>
+            </label>
+            <input id="name" type="text" name="name" placeholder="您的回答">
+            <div class="input-error">請輸入暱稱</div>
+          </div>
+          <div class="form hide-error">
+            <label for="e-mail">
+              電子郵件 <span style="color:#e74149;">*</span>
+            </label>
+            <input id="e-mail" type="text" name="email" placeholder="您的電子郵件">
+            <div class="input-error">請輸入電子郵件</div>
+          </div>
+          <div class="form hide-error">
+            <label for="phon">
+              手機號碼 <span style="color:#e74149;">*</span>
+            </label>
+            <input id="phon" type="text" name="phone" placeholder="您的手機號碼">
+            <div class="input-error">請輸入手機號碼</div>
+          </div>
+          <div class="form hide-error">
+            <label>
+              報名類型 <span style="color:#e74149;">*</span>
+            </label>
+            <div>
+              <input id="option-1" type="radio" name="type">
+              <label for="option-1" class="option option__mb"><span></span>躺在床上用想像力實作</label>
+            </div>
+            <div>
+              <input id="option-2" type="radio" name="type">
+              <label for="option-2" class="option"><span></span>趴在地上滑手機找現成的</label>
+            </div>
+            <div class="input-error">請選取報名類型</div>
+          </div>
+          <div class="form hide-error">
+            <label for="how-know">
+              怎麼知道這個活動的？ <span style="color:#e74149;">*</span>
+            </label>
+            <input id="how-know" type="text" name="know" placeholder="您的回答">
+            <div class="input-error">未填寫</div>
+          </div>
+          <div class="form">
+            <label for="other" class="form__other">其他</label>
+            <p class="other__text">對活動的一些建議</p>
+            <input id="other" type="text" name="other" placeholder="您的回答">
+          </div>
+          <div class="button">
+            <input type="submit" class="btn" value="提交">
+          </div>
+          <div class="btn__text">請勿透過表單送出您的密碼。</div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">© 2020 © Copyright. All rights Reserved.</div>
+    </footer>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
