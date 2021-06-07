@@ -1,0 +1,145 @@
+/* globel */
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* grid */
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 85px 16px 40px;
+}
+
+/* nav */
+.navbar {
+  display: flex;
+  position: fixed;
+  height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: white;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+.logo {
+  font-size: 32px;
+  font-weight: 600;
+}
+.game__list {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: stretch;
+  height: 100%;
+}
+.game__list-name {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.navbar .game__list-name:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+/* bg */
+.bg::before{
+  content: '';
+  position: fixed;
+  z-index: -1;
+  background: url('starry-sky.jpg') center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+/* game */
+.game__title {
+  color:  white;
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.game__title-desc {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+/* stream */
+.streams {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.stream {
+  width: 360px;
+  background: #525257;
+  color: #E5E3E3;
+  text-align: left;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-left: 16px;
+  transition: all 0.2s;
+}
+.stream:hover {
+  transform: scale(1.06);
+  filter: brightness(1.5);
+  box-shadow: 5px 5px 20px 5px rgb(0, 0, 0, 60%);
+}
+.stream > img {
+  width: 100%;
+}
+.stream-empty {
+  width: 360px;
+  padding-left: 16px;
+}
+.stream__data {
+  display: flex;
+  padding: 6px;
+ 
+}
+.stream__data-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  min-width: 50px;
+}
+.stream__data-avatar > img {
+  width: 100%;
+  height: 100%;
+} 
+.stream__data-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.stream__data-intro .intro__title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
