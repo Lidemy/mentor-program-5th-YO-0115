@@ -36,6 +36,10 @@ document.querySelector('form').addEventListener('submit', (e) => {
   }
 
   if (!hasError) {
-    alert(JSON.stringify(values))
+    try {
+      alert(JSON.stringify(values))
+    } catch (err) {
+      console.log('error')
+    }
   }
 })
