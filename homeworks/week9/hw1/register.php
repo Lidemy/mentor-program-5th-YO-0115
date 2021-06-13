@@ -44,7 +44,7 @@
         <span>密碼：</span>
         <input type="password" name="password" />
       </div>
-      <input class="board__submit-btn" type="submit" />
+      <input class="board__submit-btn" type="submit" value="送出" />
     </form>
   </main>
 </body>

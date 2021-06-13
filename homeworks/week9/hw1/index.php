@@ -62,7 +62,7 @@
           <span><?php echo '<h2>HI！' . $nickname . '</h2>' ?></span>
         </div>
         <textarea name="content" rows="5"></textarea>
-        <input class="board__submit-btn" type="submit" />
+        <input class="board__submit-btn" type="submit" value="送出" />
       <?php } else { ?>
         <div class="board__nickname">
           <span>請先登入</span>
