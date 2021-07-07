@@ -125,8 +125,8 @@
               <?php echo escape($row['created_at']); ?>
             </span>
             <?php if (hasPermission($user, 'update', $row)) { ?>
-              <a href="update_comment.php?id=<?php echo $row['id']; ?>">編輯</a>
-              <a href="handle_delete_comment.php?id=<?php echo $row['id']; ?>">刪除</a>
+              <a href="update_comment.php?id=<?php echo escape($row['id']); ?>">編輯</a>
+              <a href="handle_delete_comment.php?id=<?php echo escape($row['id']); ?>">刪除</a>
             <?php } ?> 
           </div>
           <p class="card__content"><?php echo escape($row['content']); ?></p>

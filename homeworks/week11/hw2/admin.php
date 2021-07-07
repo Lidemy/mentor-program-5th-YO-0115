@@ -3,6 +3,11 @@
   require_once('conn.php');
   require_once('utils.php');
 
+  if (empty($_SESSION['username'])) {
+    header('Location: index.php');
+    exit;
+  } 
+
   $sql = "SELECT * FROM YO_w11_article AS a WHERE a.is_deleted IS NULL  ORDER BY id DESC";
   $stmt = $conn->prepare($sql);
   $result = $stmt->execute();

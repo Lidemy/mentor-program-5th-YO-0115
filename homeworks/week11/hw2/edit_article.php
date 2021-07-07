@@ -1,6 +1,12 @@
 <?php
-session_start();
+  session_start();
   require_once('conn.php');
+  require_once('utils.php');
+
+  if (empty($_SESSION['username'])) {
+    header('Location: index.php');
+    exit;
+  }
 
   $id = $_GET['id'];
 
@@ -47,10 +53,10 @@ session_start();
           }
         ?>
         <div class="create__content">
-          <input class="create__title" type="text" name="title" value="<?php echo $row['title']; ?>">
-            <textarea name="content" rows="20"><?php echo $row['content']; ?></textarea>
+          <input class="create__title" type="text" name="title" value="<?php echo escape($row['title']); ?>">
+            <textarea name="content" rows="20"><?php echo escape($row['content']); ?></textarea>
         </div>
-         <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+          <input type="hidden" name="id" value="<?php echo escape($row['id']) ?>">
           <input class="create__content-btn" type="submit" value="送出">
         </div>
       </form>

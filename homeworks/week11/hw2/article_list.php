@@ -33,7 +33,7 @@
           <li><a href="#">關於我</a></li>
         </div>
         <div>
-          <li><a href="register.php">註冊</a></li>
+          <!-- <li><a href="register.php">註冊</a></li> -->
           <li><a href="login.php">登入</a></li>
         </div>
       </ul>

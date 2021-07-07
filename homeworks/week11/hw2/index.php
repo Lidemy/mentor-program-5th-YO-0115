@@ -42,7 +42,7 @@
           <li><a href="#">關於我</a></li>
         </div>
         <div>
-          <li><a href="register.php">註冊</a></li>
+          <!-- <li><a href="register.php">註冊</a></li> -->
           <li><a href="login.php">登入</a></li>
         </div>
       </ul>
@@ -65,7 +65,7 @@
         </div>
         <p class="post__content"><?php echo escape($row['content']); ?></p>
         <div class="post__btn">
-          <a href="read_more.php?id=<?php echo $row['id']; ?>" class="btn">read more</a>
+          <a href="read_more.php?id=<?php echo escape($row['id']); ?>" class="btn">read more</a>
         </div>
       </article>
       <?php } ?>

@@ -6,7 +6,6 @@ session_start();
   $username = NULL;
   if (!empty($_SESSION['username'])) {
     $username = $_SESSION['username'];
-    $user = getUserFromUsername($username);
   } 
 
   $id = $_GET['id'];
@@ -43,8 +42,7 @@ session_start();
             <?php if ($row['username'] === $username) { ?>
               <a href="admin.php">返回頁面</a>
             <?php } else { ?>
-              <a href="index.php">返回首頁</a>
-              <a href="article_list.php">文章列表</a>
+              <a href="<?php echo $_SERVER['HTTP_REFERER']?>">返回首頁</a>
             <?php } ?>
           </div>
         </div>
