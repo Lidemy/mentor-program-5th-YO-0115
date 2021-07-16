@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .container {
+      margin-top: 10%;
+      margin-bottom: 10%;
+      max-width: 900px;
+      padding: 24px 32px;
+      border: 1px solid black;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .list__head {
+      position: relative;
+    }
+    .list__title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .list__head-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .list__save {
+      margin-right: 10px;
+    }
+    .list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .list-group-item span {
+      cursor: pointer;
+      white-space: pre-line;
+      word-break: break-word;
+      line-height: 1.8rem;
+      width: 70%;
+    }
+    .list-group-item {
+      border: none;
+      border-bottom: 1px solid rgba(0,0,0,.125); 
+    }
+    .list__edit {
+      width: 75%;
+      padding: 6px;
+    }
+    .checked {
+      text-decoration: line-through;
+      color: #A4A4A4;
+    }
+    .list__next {
+      display: flex;
+      justify-content: space-between;
+    }
+    .next__count {
+      padding: 6px 0;
+    }
+    .list__btn {
+      display: flex;
+      align-items: center;
+    }
+    .list__btn .btn,
+    .list__btn .btn:focus,
+    .btn-group .btn, 
+    .btn-group .btn:focus,
+    .btn-check:focus+.btn {
+      background: white;
+      border: none;
+      box-shadow: none;
+    }
+    .list__btn .btn:hover {
+      color: red;
+      font-weight: 700;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .btn-group .btn {
+      height: 32px;
+      border-radius: 0;
+    }
+    .btn-group .btn:focus,
+    .btn-check:focus+.btn {
+      border-top: 2px solid black;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="list__head">
+        <h1 class="list__title">TO DO LIST</h1>
+        <div class="list__head-btn">
+          <button class="list__save">save</button>
+          <button class="list__token">token</button>
+        </div>
+      </div>
+      <div class="input-group mb-4">
+        <input type="text" class="form-control" placeholder="今天要做些什麼 ?">
+        <button class="btn btn-outline-secondary btn__send" type="button">送出</button>
+      </div>
+      <ul class="list-group">
+      </ul>
+      <div class="list__next">
+        <div class="next__count">
+          <span class="undone-count">0</span> 個未完成
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <div class="'list__total'">
+            <input type="radio" class="btn-check btn__total" name="list" id="list__total" checked>
+            <label class="btn btn__total" for="list__total">TO DO LIST</label>
+          </div>
+          <div>
+            <input type="radio" class="btn-check btn__undone" name="list" id="list__undone">
+            <label class="btn btn__undone" for="list__undone">未完成</label>
+          </div>
+          <div>
+            <input type="radio" class="btn-check btn__finished" name="list" id="list__finished">
+            <label class="btn btn__finished" for="list__finished">已完成</label>
+          </div>
+          <div>
+            <input type="radio" class="btn-check" name="list" id="list__total" checked>
+            <label class="btn list__clear" for="list__clear">清空</label>
+          </div>      
+        </div> 
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
