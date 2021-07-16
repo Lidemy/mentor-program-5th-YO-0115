@@ -1,14 +1,6 @@
 <?php
   require_once("conn.php");
 
-  function generateToken() {
-    $s = '';
-    for ($i=0; $i<=16; $i++) {
-      $s .= chr(rand(65, 90));
-    }
-    return $s;
-  }
-
   function getUserFromUsername($username) {
     global $conn;
 

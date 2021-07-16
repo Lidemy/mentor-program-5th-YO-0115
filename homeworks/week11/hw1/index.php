@@ -92,12 +92,12 @@
     <form class="board__new-comment-form" method="POST" action="handle_add.php">
       <?php if ($username && !hasPermission($user, 'create', NULL)) { ?>
         <div class="board__nickname">
-          <span><?php echo '<h2>HI！' . $nickname . ' 不想給你留言喔' . '</h2>' ?></span>
+          <span><?php echo '<h2>HI！' . escape($nickname) . ' 不想給你留言喔' . '</h2>' ?></span>
         </div>
         <textarea name="content" rows="5"></textarea>
       <?php } else if ($username) { ?>
         <div class="board__nickname">
-          <span><?php echo '<h2>HI！' . $nickname . '</h2>' ?></span>
+          <span><?php echo '<h2>HI！' . escape($nickname) . '</h2>' ?></span>
         </div>
         <textarea name="content" rows="5"></textarea>
         <input class="board__submit-btn" type="submit" value="送出" />

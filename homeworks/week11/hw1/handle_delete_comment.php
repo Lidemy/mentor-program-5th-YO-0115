@@ -12,6 +12,11 @@
   $username = $_SESSION['username'];
   $user = getUserFromUsername($username);
 
+  if (!$username) {
+    header('Location: index.php');
+    exit;
+  }
+
   $sql = "UPDATE YO_w9_comments SET is_deleted=1 WHERE id=? AND username=?";
   if (isAdmin($user)) {
     $sql = "UPDATE YO_w9_comments SET is_deleted=1 WHERE id=?";

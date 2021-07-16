@@ -13,6 +13,11 @@
   $id = $_POST['id'];
   $content = $_POST['content'];
 
+  if (!$username) {
+    header('Location: index.php');
+    exit;
+  }
+
   $sql = "UPDATE YO_w9_comments SET content=? WHERE id=? AND username=?";
   if (isAdmin($user)) {
   $sql = "UPDATE YO_w9_comments SET content=? WHERE id=?";

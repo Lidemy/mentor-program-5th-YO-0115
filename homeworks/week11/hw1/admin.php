@@ -25,7 +25,8 @@
   
   $result = $stmt->execute();
   if (!$result) {
-    die('Error: ' . $conn->error); 
+    header('Location: index.php');
+    die('伺服器出錯'); 
   }
   $result = $stmt->get_result();
 ?>
