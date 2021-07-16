@@ -1,0 +1,191 @@
+/* global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+body {
+  background: #EEFDF4;
+}
+hr {
+ background: #588666;
+ height: 1px;
+ margin: 0.6rem 0;
+ border: none;
+}
+a {
+  text-decoration: none;
+}
+.mb {
+  margin-bottom: 1rem;
+}
+.ml {
+  margin-left: 1rem;
+}
+.hide {
+  display: none;
+}
+
+/* btn */
+.board__btn span,
+.board__btn a,
+.board__submit-btn,
+.paginator a,
+.role__edit, 
+.role__save,
+.option__btn  {
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  margin-right: 0.3rem;
+  border: 1px solid #B0CCB8;
+  border-radius: 5px;
+  background: transparent;
+  color: #278A2E;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;  
+}
+.board__btn span:hover,
+.board__btn a:hover,
+.board__submit-btn:hover,
+.paginator a:hover,
+.role__edit:hover, 
+.role__save:hover,
+.option__btn:hover {
+  background: #5FB322;
+  color: white;
+}
+
+/* input */
+.board__nickname input {
+  border: 1px solid #B0CCB8;
+  padding: 0.3rem;
+}
+.board__nickname input,
+.board__new-comment-form textarea:focus {
+  outline-color: #5FB322;
+}
+
+
+/* header */
+.warning {
+  background: #FA8B8B;
+  color: #CE2020;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* main */
+.board {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 0.8rem 1.8rem;
+  background: white;
+  box-shadow: 2px 2px 3px #E7E7E7;
+  border-radius: 5px;
+}
+.board__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.board__btn span {
+  cursor: pointer;
+}
+.board__title {
+  font-size: 2rem;
+}
+.error {
+  color: #CE2020;
+}
+.board__nickname {
+  margin: 1rem 0;
+}
+.board__new-comment-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #B0CCB8;
+  resize: none;
+}
+
+/* card */
+.card {
+  display: flex;
+  min-height: 4.5rem;
+  margin: 2rem 0;
+}
+.card__avatar {
+  width: 3rem;
+  min-width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #B0CCB8;
+  margin-right: 0.5rem;
+}
+.card__author {
+  color: #278A2E;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.card__time {
+  color:  #a0a0a0;
+}
+.card__content {
+  margin-top: 0.5rem;
+  max-width: 100%;
+  white-space: pre-line;
+  word-break: break-word;
+  line-height: 1.5rem;
+}
+
+/* page */
+.page__info {
+  text-align: center;
+}
+.paginator {
+  display: flex;
+  justify-content: center;
+}
+
+/* main */
+.board__data {
+  min-height: calc(80vh - 45px);
+  margin: 10vh 64px;
+  padding: 32px 63px;
+  background: white;
+  box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+.board__data .board__title {
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 32px;
+  text-align: center;
+  table-layout: fixed;
+  word-wrap:break-word;
+}
+th {
+  background: #588666;
+}
+table, th, td {
+  border: 1px solid #B0CCB8;
+}
+th, td {
+  padding: 1rem 0.5rem;
+}
+.role__option {
+  margin-bottom: 0.5rem;
+}
+.role__option label {
+ margin-right: 0.3rem;
+}
+.option__btn {
+  margin-left: 0.3rem;
+}
