@@ -17,19 +17,6 @@ const STREAM_TEMPLATE = ` <div class="stream">
   </div>
 </div>`
 
-// 更改 top 遊戲列表
-getGames((games) => {
-  for (const game of games) {
-    const element = document.createElement('li')
-    element.classList.add('game__list-name')
-    element.innerText = game.game.name
-    document.querySelector('.game__list').appendChild(element)
-  }
-
-  // 顯示第一個遊戲實況名稱
-  changeGame(games[0].game.name)
-})
-
 document.querySelector('.game__list').addEventListener('click', (e) => {
   if (e.target.classList.contains('game__list-name')) {
     const gameName = e.target.innerText
@@ -41,11 +28,13 @@ function changeGame(gameName) {
   document.querySelector('.game__title').innerText = gameName
   document.querySelector('.streams').innerHTML = ''
 
-  getStreams(gameName, (streams) => {
+  getStreams(gameName).then((data) => {
+    const { streams } = data
     for (const stream of streams) {
       appendStream(stream)
     }
   })
+    .catch((err) => console.log(err))
 }
 
 function appendStream(stream) {
@@ -58,32 +47,51 @@ function appendStream(stream) {
     .replace('$name', stream.channel.name)
 }
 
-function getGamesData() {
-  return fetch(`${API_URL}/games/top?limit=5`, {
+async function getGamesData() {
+  const response = await fetch(`${API_URL}/games/top?limit=5`, {
     headers: new Headers({
       Accept: 'application/vnd.twitchtv.v5+json',
       'Client-ID': CLIENT_ID
     })
-  }).then((res) => res.json())
-}
+  })
 
-async function getGames(cb) {
-  let games
+  let data
   try {
-    games = await getGamesData().then((json) => json.top)
-  } catch (err) {
-    console.log('err: ', err)
+    data = await response.json()
+  } catch (error) {
+    console.log(error)
   }
-  cb(games)
+
+  return data
 }
 
-function getStreams(gameName, cb) {
-  fetch(`${API_URL}/streams?game=${encodeURIComponent(gameName)}`, {
+async function getGames() {
+  let data
+  try {
+    data = await getGamesData()
+  } catch (error) {
+    console.log(error)
+  }
+
+  const games = data.top
+  for (const game of games) {
+    const element = document.createElement('li')
+    element.classList.add('game__list-name')
+    element.innerText = game.game.name
+    document.querySelector('.game__list').appendChild(element)
+  }
+
+  changeGame(games[0].game.name)
+}
+
+getGames()
+
+function getStreams(gameName) {
+  return fetch(`${API_URL}/streams?game=${encodeURIComponent(gameName)}`, {
     headers: new Headers({
       Accept: 'application/vnd.twitchtv.v5+json',
       'Client-ID': CLIENT_ID
     })
   }).then((res) => res.json())
-    .then((json) => cb(json.streams))
     .catch((error) => console.log('err: ', error))
 }
