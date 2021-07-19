@@ -1,0 +1,315 @@
+.create__content-btn, .card__content-btn, .card__head a, .post__head-btn a, .btn {
+  border: 1px solid black;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.2s;
+}
+
+.create__content-btn:hover, .card__content-btn:hover, .card__head a:hover, .post__head-btn a:hover, .btn:hover {
+  background: black;
+  color: white;
+}
+
+.list__info a:hover, .article, .card, .cards, .post, .posts {
+  background: white;
+  border: 1px solid #4B4B4B;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  background: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+input,
+textarea {
+  white-space: pre;
+  padding: 0.5rem;
+}
+
+textarea {
+  line-height: 1.5rem;
+}
+
+.error {
+  color: #CE2020;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.posts.post-margin {
+  margin: 5% auto;
+}
+
+.card__content-btn {
+  background: transparent;
+}
+
+.create__content-btn {
+  background: transparent;
+}
+
+footer {
+  padding: 0.5rem;
+  background: #555555;
+  color: #FFD000;
+  text-align: center;
+  font-size: 10px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #DAFAFD;
+  border-bottom: 2px solid #81B7FF;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.navbar .container {
+  display: flex;
+  height: 8vh;
+  align-items: center;
+}
+
+.nav__logo {
+  margin-right: 1.2rem;
+}
+.nav__logo a {
+  font-size: 1.4rem;
+  color: #373333;
+  padding: calc(4vh - 0.8rem) 0.5rem;
+  transition: all 0.2s;
+}
+.nav__logo a:hover {
+  filter: brightness(1.5);
+  box-shadow: 1px 1px 3px 3px #5C87AE;
+  border-radius: 5px;
+}
+
+.nav__list {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__list > div {
+  display: flex;
+}
+.nav__list li {
+  margin-right: 0.5rem;
+}
+.nav__list a {
+  display: inline-block;
+  font-weight: bold;
+  color: #68676D;
+  padding: calc(4vh - 8px) 0.5rem;
+  transition: all 0.2s;
+}
+.nav__list a:hover {
+  color: #0100DC;
+}
+.nav__list .list__mark {
+  color: black;
+  box-shadow: 1px 1px 3px 3px #5C87AE;
+  border-radius: 5px;
+}
+
+.bg {
+  height: 8vh;
+}
+
+.banner {
+  position: relative;
+  height: 30vh;
+  background: url("open-book.jpg") center/cover no-repeat;
+  text-align: center;
+  vertical-align: top;
+}
+.banner .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.banner__text {
+  margin-top: 0.5rem;
+}
+
+.posts {
+  margin: 2rem auto;
+  min-height: calc(62vh - 59px);
+  padding: 1.5rem;
+}
+
+.post {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+.post__head {
+  display: flex;
+  justify-content: space-between;
+}
+.post__title {
+  font-size: 1.5rem;
+  margin-bottom: 1.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.post__created-at {
+  color: #868686;
+}
+.post__content {
+  line-height: 1.4rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.post__btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+}
+.paginator .btn {
+  margin: 0 0.5rem;
+}
+
+.cards {
+  margin: 10% auto;
+  width: 30rem;
+  height: 25rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 10px solid black;
+}
+
+.card {
+  padding: 1.5rem;
+  width: 25rem;
+  height: 20rem;
+}
+.card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+}
+.card__content label {
+  margin-bottom: 2.5rem;
+}
+
+.post__btn a {
+  margin-left: 1rem;
+}
+.post-admin {
+  margin-bottom: 0;
+}
+
+.create__content {
+  display: flex;
+  flex-direction: column;
+}
+.create__title {
+  width: 60%;
+  margin-bottom: 1.5rem;
+}
+.create__content textarea {
+  resize: none;
+  margin-bottom: 1.5rem;
+  line-height: 1.3rem;
+}
+
+.post-read {
+  margin-bottom: 0;
+  min-height: 80vh;
+  position: relative;
+}
+.post-read hr {
+  margin-bottom: 1rem;
+}
+.post__head-btn a {
+  margin-left: 0.5rem;
+}
+.post__time {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.read__content {
+  word-break: break-word;
+  line-height: 1.4rem;
+  white-space: pre-wrap;
+}
+
+.article {
+  margin: 5% auto;
+  padding: 1.5rem 3rem;
+  border-top: 10px solid black;
+}
+.article__list {
+  margin-bottom: 1.5rem;
+}
+
+.list__info {
+  margin-bottom: 0.5rem;
+}
+.list__info a {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.2s;
+}
+.list__content {
+  display: flex;
+  align-items: baseline;
+}
+.list__title {
+  margin-bottom: 0;
+  margin-right: 2rem;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,18 @@
+%btn {
+  border: 1px solid black;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.2s;
+}
+
+%btn-hover {
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+  
+%primany-border {
+  background: white;
+  border: 1px solid #4B4B4B;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+}
